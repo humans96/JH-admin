@@ -1,0 +1,45 @@
+.nav{
+  .logo{
+    height: 50px;
+    p{
+      line-height: 50px;
+      font-size: 25px;
+      text-align: center;
+      color:#fff;
+      background-color: rgb(54, 127, 169);
+    }
+    a{
+      text-decoration: none;
+    }
+  }
+  .navBar{
+    height: 100vh;
+  }
+  .el-menu{
+    border-right: none;
+  }
+}
+.heads{
+  .logOut{
+    font-size: 20px;
+    color: rgb(6, 136, 243);
+    float: right;
+    line-height: 50px;
+    margin-right: 10%;
+  }
+}
+.demo-table-expand {
+  font-size: 0;
+}
+.demo-table-expand label {
+  width: 120px;
+  color: #99a9bf;
+}
+.demo-table-expand .el-form-item {
+  margin-right: 0;
+  margin-bottom: 0;
+  width: 50%;
+  .el-form-item__content{
+    width: calc(100% - 120px)
+  }
+}
