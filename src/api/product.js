@@ -9,3 +9,5 @@ export const allProduct = request('/allProduct');
 export const getOrder = request('/order');
 export const editProduct = request('/editProduct','POST');
 export const addProduct = request('/addProduct','POST');
+export const agreeOrder = request('/agreeOrder','POST');
+export const refuseOrder = request('/refuseOrder','POST');

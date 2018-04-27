@@ -9,17 +9,18 @@ import Content from 'components/default/content.vue';
 import Product from 'components/product.vue';
 import Order from 'components/order.vue';
 import Examine from 'components/examine.vue';
+import Login from 'components/login.vue';
 Vue.use(VueRouter);
 
 const routes =  [
   {
-    path: '/',
+    path: '/admin',
     components: {
       body: Index
     },
     children: [
       {
-        path:'/', 
+        path:'/admin', 
         components: {
           nav: Nav,
           header:Header,
@@ -28,7 +29,7 @@ const routes =  [
         }, 
       },
       {
-        path:'/product', 
+        path:'/admin/product', 
         components: {
           nav: Nav,
           header:Header,
@@ -37,7 +38,7 @@ const routes =  [
         }, 
       },
       {
-        path:'/examine', 
+        path:'/admin/examine', 
         components: {
           nav: Nav,
           header:Header,
@@ -45,11 +46,13 @@ const routes =  [
           content: Examine
         }, 
       }
-      // { path: '/db/:bundleName', name: 'db', component: DB },
-      // { path:'/examine', name:'exam', component: Exam },
-      // { path:'/payExamine', name:'payExamine', component: payExamine },
-      // { path:'/account', name:'account', component: Account },
     ]
+  },
+  {
+    path:'/',
+    components:{
+      body: Login
+    }
   }
 ];
 

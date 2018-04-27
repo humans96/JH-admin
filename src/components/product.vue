@@ -256,16 +256,13 @@
         this.chose = [];
         this.choseTitle = [];
         Object.keys(row.switch).map((v,k)=>{
-          // if(v!='image'){
           this.chose.push({
             [v]:row.switch[v]
           })
           this.choseTitle.push(v);
-          // }
         })
         this.addOredit = 'edit';
         this.dialogFormVisible = true;
-        // console.log(index, row);
         console.log(this.choseTitle);
       },
       handleDelete(index, row) {

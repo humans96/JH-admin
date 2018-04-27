@@ -1,0 +1,162 @@
+.login{
+  display: flex;
+  // -ms-flex-direction: column;
+  // flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to top right, #222d32, #074571);
+  .login-container{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: -100px;
+  }
+  .logo img{
+    width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .login-box-warp{
+    width: 100%;
+  }
+  @media (min-width: 375px){
+    .login-box-warp{
+      width: 350px;
+    }
+  }
+  .login-box{
+    box-shadow: 0px 0px 20px #ccc;
+    position: relative;
+    padding: 25px;
+    padding-top: 40px;
+    background: #f3f3f3;
+    h2{
+      font-size: 18px;
+      margin: 10px 0;
+      font-weight: 500;
+    }
+    .input-group{
+      font-size: 24px;
+      position: relative;
+      display: table;
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      margin-bottom: 24px;
+      input{
+        font-size: 14px;
+        height: 42px;
+        width: 100%;
+        color: rgba(0, 0, 0, 0.65);
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        transition: all .3s;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        float: left;
+        margin-bottom: 0;
+        padding: 6px 7px;
+      }
+      input:focus{
+        outline: #409EFF solid 1px;
+      }
+      .input-icon{
+        font-size: 24px;
+        padding: 4px 7px;
+        font-weight: normal;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.65);
+        text-align: center;
+        background-color: #eee;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        position: relative;
+        transition: all .3s;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+        border-top-left-radius: 0;
+        vertical-align: middle;
+        width: 1px;
+        display: table-cell;
+        i{
+          font-size: 24px;
+        }
+      }
+    }
+    .login-box-link{
+      height: 25px;
+      margin-top: 20px;
+      a{
+        float: right;
+        margin-right: 10px;
+        color: #108ee9;
+        background: transparent;
+        text-decoration: none;
+        outline: none;
+        cursor: pointer;
+        transition: color .3s ease;
+        font-size: 12px;
+      }
+    }
+    .login-submit{
+      display: inline-block;
+      line-height: 1;
+      white-space: nowrap;
+      cursor: pointer;
+      background: #fff;
+      border: 1px solid #dcdfe6;
+      color: #606266;
+      -webkit-appearance: none;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      outline: 0;
+      margin: 0;
+      -webkit-transition: .1s;
+      transition: .1s;
+      font-weight: 500;
+      padding: 12px 20px;
+      font-size: 14px;
+      border-radius: 4px;
+      width: 100%;
+      color: #fff;
+      background-color: #409EFF;
+      border-color: #409EFF;
+    }
+  }
+
+}
+#input{
+  width: 70%;
+}
+#code  
+{  
+  font-family:Arial;  
+  font-style:italic;  
+  font-weight:bold;  
+  border:0;  
+  letter-spacing:2px;  
+  color:blue; 
+  background: -webkit-linear-gradient(left ,#C7C7C7 ,#fff); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #C7C7C7 ,#fff); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right,#C7C7C7 ,#fff); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #C7C7C7 ,#fff); /* 标准的语法（必须放在最后） */
+  width: 30%;
+  border-radius: 4px;
+  transition: all .3s;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}  

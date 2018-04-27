@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="heads">
-    <span class="logOut"><el-button>退出</el-button></span>    
+    <span class="logOut"><el-button @click="loginOut">退出</el-button></span>    
     
   </div>
 </template>
@@ -15,7 +15,11 @@
         a: 1
       };
     },
-    methods: {}
+    methods: {
+      loginOut(){
+        this.$router.push('/')
+      }
+    }
   }
 
 </script>
