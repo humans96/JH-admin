@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="nav" style="height: 100vh">
+  <div class="nav">
     <div class="logo">
       <a href="#/admin"><p>集慧</p></a>
     </div>
@@ -19,6 +19,10 @@
       <el-menu-item index="/admin/examine">
         <i class="el-icon-search"></i>
         <span slot="title">订单审核</span>
+      </el-menu-item>
+      <el-menu-item index="/admin/user">
+        <i class="iconfont icon-people" style="margin-right: 5px;text-align: center;font-size: 24px;"></i>
+        <span slot="title">用户管理</span>
       </el-menu-item>
     </el-menu>
   </div>

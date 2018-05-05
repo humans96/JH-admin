@@ -61,7 +61,7 @@
       </el-table-column>
       <el-table-column 
         label="操作"
-        min-width="120">
+        min-width="150">
         <template slot-scope="scope">
           <el-button
             size="mini"
@@ -74,7 +74,7 @@
       </el-table-column>
     </el-table>
 
-    <el-dialog title="修改商品信息" :visible.sync="dialogFormVisible">
+    <el-dialog :title="addOredit=='edit'?'修改商品信息':'添加商品'" :visible.sync="dialogFormVisible">
       <el-form :model="form">
         <el-form-item label="商品名称" label-width="120px">
           <el-input v-model="form.name" auto-complete="off"></el-input>
@@ -128,7 +128,8 @@
   import {
     allProduct,
     editProduct,
-    addProduct
+    addProduct,
+    deleteProduct
   } from 'api/product.js';
 
   export default {
@@ -163,14 +164,22 @@
         this.chose.map((v, k)=>{
           data.switch[this.choseTitle[k]] = this.StringtoArr(v[Object.keys(v)[0]]);
         })
-        if(this.addOredit=='add'){
-          addProduct(data).then(res =>{
-            this.initials();
+        if(data.price < 0 || data.stock < 0) {
+          this.$confirm('价格和库存必须大于0', '提示', {
+            confirmButtonText: '确定',
+            type: 'warning'
           })
-        }else {
-          editProduct(data).then(res=>{
-            console.log(res);
-          })
+        }
+        else{
+          if(this.addOredit=='add'){
+            addProduct(data).then(res =>{
+              this.initials();
+            })
+          }else {
+            editProduct(data).then(res=>{
+              console.log(res);
+            })
+          }
         }
         this.dialogFormVisible = false;
       },
@@ -266,7 +275,11 @@
         console.log(this.choseTitle);
       },
       handleDelete(index, row) {
-        console.log(index, row);
+        deleteProduct({
+          id:row.id
+        }).then(res =>{
+          this.initials();
+        })
       }
     },
     created(){

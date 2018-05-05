@@ -71,18 +71,19 @@
       <el-table-column
         label="快递单号"
         prop="orderID"
+        v-if="status=='Receiving'||status=='Finish'"
         min-width="150">
       </el-table-column>
       <el-table-column
         label="订单时间"
         prop="time"
         sortable
-        min-width="150">
+        min-width="180">
       </el-table-column>
       <el-table-column
         label="用户"
         prop="user"
-        min-width="200">
+        min-width="100">
       </el-table-column>
       <el-table-column
         label="用户留言"
@@ -97,7 +98,7 @@
       </el-table-column>
       <el-table-column 
         label="操作"
-        min-width="120"
+        min-width="150"
         v-if="status=='Auditing'">
         <template slot-scope="scope">
           <el-button
@@ -145,7 +146,8 @@
   import Vue from 'vue';
   import {
     agreeOrder,
-    refuseOrder
+    refuseOrder,
+    agreeOrderError
   } from 'api/product.js';
 
   export default {
@@ -182,13 +184,26 @@
         this.curIndex = index;
         this.dialogFormVisible = true;
       },
-      conf(){
+      conf(index, row){
         this.curData.product.forEach(item =>{
           agreeOrder({
             id:this.curData.id,
             oid:this.form.orderID,
-            pid:item.id,
-            num:item.num--
+            pname:item.name,
+            num:item.num
+          }).then(res =>{
+            if(res.errorMessage){
+              this.$confirm( item.name + '库存不足，请补货！', '提示', {
+                confirmButtonText: '确定',
+                type: 'warning'
+              })
+              agreeOrderError({
+                id:this.curData.id,
+                oid:this.form.orderID,
+                pname:item.name,
+                num:item.num
+              })
+            }
           })
         });
         this.curData.orderID = this.form.orderID;
@@ -217,9 +232,6 @@
           
         })    
       }
-    },
-    created(){
-
     }
   }
 

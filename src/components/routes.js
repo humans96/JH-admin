@@ -10,6 +10,7 @@ import Product from 'components/product.vue';
 import Order from 'components/order.vue';
 import Examine from 'components/examine.vue';
 import Login from 'components/login.vue';
+import User from 'components/user.vue';
 Vue.use(VueRouter);
 
 const routes =  [
@@ -44,6 +45,15 @@ const routes =  [
           header:Header,
           footer:Footer,
           content: Examine
+        }, 
+      },
+      {
+        path:'/admin/user', 
+        components: {
+          nav: Nav,
+          header:Header,
+          footer:Footer,
+          content: User
         }, 
       }
     ]
