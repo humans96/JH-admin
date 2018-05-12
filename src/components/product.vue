@@ -13,13 +13,13 @@
               <span>{{ props.row.switch.image }}</span>
             </el-form-item>
             <el-form-item label="商品详情图片">
-              <span>{{ props.row.detail.image }}</span>
+              <span>{{ props.row.detail }}</span>
             </el-form-item>
             <el-form-item label="包装">
-              <span>{{ props.row.packing.image }}</span>
+              <span>{{ props.row.packing }}</span>
             </el-form-item>
             <el-form-item label="功能">
-              <span>{{ props.row.function.image }}</span>
+              <span>{{ props.row.function }}</span>
             </el-form-item>
           </el-form>
           <h1 style="font-size: 20px;padding: 20px 0;" v-if="Object.keys(props.row.switch).length>1">选项</h1>
