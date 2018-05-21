@@ -198,19 +198,32 @@
         }
       },
       ArrtoString(val){
-        if(val.length >=1){
-          return val.join(" , ");
+        if(val){
+          if(val.length >1){
+            return val.join(" , ");
+          }
+          else {
+            return '';
+          }
         }
         else {
           return '';
         }
+        
       },
       StringtoArr(val){
-        if(val.split(' , ')[0]==''){
-          return [];
-        }else {
-          return val.split(' , ');
+        // console.log(val);
+        if(val){
+          if(val.split(' , ')[0]==''){
+            return [];
+          }else {
+            return val.split(' , ');
+          }
         }
+        else {
+          return []
+        }
+        
       },
       addChose(){
         this.choseTitle.push('标题');
